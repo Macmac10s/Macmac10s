@@ -1,0 +1,172 @@
+local DeluxesX = Instance.new("ScreenGui")
+local Shadow = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+local Gui = Instance.new("Frame")
+local Text = Instance.new("TextLabel")
+local Health = Instance.new("TextButton")
+local Telephiebutton = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local Telephie = Instance.new("Frame")
+local Text_2 = Instance.new("TextLabel")
+local Box = Instance.new("TextBox")
+local Button = Instance.new("TextButton")
+local Teleport = Instance.new("RemoteEvent", game.ReplicatedStorage)
+local Script = Instance.new("Script", game.ServerScriptService)
+
+--Properties:
+
+DeluxesX.Name = "DeluxesX"
+DeluxesX.Parent = game.CoreGui
+DeluxesX.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Shadow.Name = "Shadow"
+Shadow.Parent = DeluxesX
+Shadow.BackgroundColor3 = Color3.fromRGB(255, 156, 35)
+Shadow.Position = UDim2.new(-0.0172661878, 0, 0.47912088, 0)
+Shadow.Size = UDim2.new(0.128057554, 0, 0.0901098922, 0)
+
+Open.Name = "Open"
+Open.Parent = DeluxesX
+Open.BackgroundColor3 = Color3.fromRGB(255, 186, 88)
+Open.BorderSizePixel = 0
+Open.Position = UDim2.new(0, 0, 0.47912088, 0)
+Open.Size = UDim2.new(0.11079137, 0, 0.0725274757, 0)
+Open.Font = Enum.Font.SourceSansBold
+Open.Text = "OPEN"
+Open.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open.TextScaled = true
+Open.TextSize = 14.000
+Open.TextWrapped = true
+Open.MouseButton1Down:Connect(function()
+	Gui.Visible = true
+end)
+
+Gui.Name = "Gui"
+Gui.Parent = DeluxesX
+Gui.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+Gui.BorderSizePixel = 0
+Gui.Position = UDim2.new(0.345323741, 0, 0.303296715, 0)
+Gui.Size = UDim2.new(0.351079136, 0, 0.443956047, 0)
+Gui.Visible = false
+Gui.Active = true
+Gui.Draggable = true
+
+Text.Name = "Text"
+Text.Parent = Gui
+Text.BackgroundColor3 = Color3.fromRGB(134, 134, 134)
+Text.BorderSizePixel = 0
+Text.Position = UDim2.new(0, 0, -0.27722773, 0)
+Text.Size = UDim2.new(1, 0, 0.247524753, 0)
+Text.Font = Enum.Font.SourceSans
+Text.Text = "DELUXES X | V1"
+Text.TextColor3 = Color3.fromRGB(0, 0, 0)
+Text.TextScaled = true
+Text.TextSize = 14.000
+Text.TextWrapped = true
+
+Health.Name = "Health"
+Health.Parent = Gui
+Health.BackgroundColor3 = Color3.fromRGB(145, 145, 145)
+Health.BorderColor3 = Color3.fromRGB(48, 75, 95)
+Health.BorderSizePixel = 2
+Health.Position = UDim2.new(0.0737704933, 0, 0.123762377, 0)
+Health.Size = UDim2.new(0.348360658, 0, 0.183168322, 0)
+Health.Font = Enum.Font.SourceSansBold
+Health.Text = "Godmode(NOT WORKING)"
+Health.TextColor3 = Color3.fromRGB(255, 255, 255)
+Health.TextScaled = true
+Health.TextSize = 14.000
+Health.TextWrapped = true
+
+Telephiebutton.Name = "Telephiebutton"
+Telephiebutton.Parent = Gui
+Telephiebutton.BackgroundColor3 = Color3.fromRGB(145, 145, 145)
+Telephiebutton.BorderColor3 = Color3.fromRGB(51, 79, 100)
+Telephiebutton.BorderSizePixel = 2
+Telephiebutton.Position = UDim2.new(0.495901644, 0, 0.123762369, 0)
+Telephiebutton.Size = UDim2.new(0.34799999, 0, 0.182999998, 0)
+Telephiebutton.Font = Enum.Font.SourceSansBold
+Telephiebutton.Text = "Teleport to player gui"
+Telephiebutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+Telephiebutton.TextScaled = true
+Telephiebutton.TextSize = 14.000
+Telephiebutton.TextWrapped = true
+Telephiebutton.MouseButton1Down:Connect(function()
+	Telephie.Visible = true
+end)
+
+Close.Name = "Close"
+Close.Parent = Gui
+Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(1, 0, 0, 0)
+Close.Size = UDim2.new(0, 36, 0, 28)
+Close.Font = Enum.Font.SourceSansBold
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+Close.MouseButton1Down:Connect(function()
+	DeluxesX.Enabled = false
+end)
+
+Telephie.Name = "Telephie"
+Telephie.Parent = DeluxesX
+Telephie.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+Telephie.BorderSizePixel = 0
+Telephie.Position = UDim2.new(0.315107912, 0, 0.323076934, 0)
+Telephie.Size = UDim2.new(0, 283, 0, 204)
+Telephie.Visible = false
+Telephie.Active = true
+Telephie.Draggable = true
+
+Text_2.Name = "Text"
+Text_2.Parent = Telephie
+Text_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_2.BackgroundTransparency = 1.000
+Text_2.Position = UDim2.new(0.144876331, 0, 0.0441176444, 0)
+Text_2.Size = UDim2.new(0, 200, 0, 50)
+Text_2.Font = Enum.Font.SourceSans
+Text_2.Text = "Teleport to a player"
+Text_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Text_2.TextScaled = true
+Text_2.TextSize = 14.000
+Text_2.TextWrapped = true
+
+Box.Name = "Box"
+Box.Parent = Telephie
+Box.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+Box.BorderColor3 = Color3.fromRGB(166, 166, 166)
+Box.Position = UDim2.new(0.144876331, 0, 0.34803921, 0)
+Box.Size = UDim2.new(0, 200, 0, 50)
+Box.Font = Enum.Font.SourceSans
+Box.PlaceholderColor3 = Color3.fromRGB(221, 221, 221)
+Box.PlaceholderText = "Player"
+Box.Text = ""
+Box.TextColor3 = Color3.fromRGB(0, 0, 0)
+Box.TextScaled = true
+Box.TextSize = 14.000
+Box.TextWrapped = true
+
+Button.Name = "Button"
+Button.Parent = Telephie
+Button.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+Button.BorderColor3 = Color3.fromRGB(72, 72, 72)
+Button.BorderSizePixel = 2
+Button.Position = UDim2.new(0.208480567, 0, 0.656862736, 0)
+Button.Size = UDim2.new(0, 164, 0, 40)
+Button.Font = Enum.Font.SourceSansBold
+Button.Text = "TELEPORT"
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.TextSize = 25.000
+Button.TextWrapped = true
+Button.MouseButton1Down:connect(function()
+	if game.Players:FindFirstChild(Telephie, Box.Text) then
+		game.ReplicatedStorage.RemoteEvent:FireServer(Telephie, Box.Text)
+	end
+end)
+
+Script.AttributeChanged(game.ReplicatedStorage.RemoteEvent.OnServerEvent:Connect(function(plr,name)
+	plr.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(name).Character.Head.CFrame
+end))
